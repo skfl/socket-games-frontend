@@ -1,0 +1,53 @@
+.footer {
+  margin-top: 2em;
+  display: flex;
+  cursor: default;
+  justify-content: space-between;
+  border: 1px none gray;
+  border-top-style: dashed;
+  padding-top: 1em;
+}
+
+.footerTitle {
+  cursor: default;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .siteTitle {
+    color: black;
+
+    span {
+      color: gray;
+    }
+  }
+
+  .annotation {
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: default;
+
+  .contactsIcons {
+    svg {
+      cursor: pointer;
+      transition: fill .3s ease-in-out;
+
+      &:hover {
+        fill: gray;
+      }
+    }
+  }
+}

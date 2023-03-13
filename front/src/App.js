@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Index from "./components/Header";
+import Footer from "./components/Footer";
+import GameCard from "./components/GameCard";
+
+const games = [
+    {gameTitle: "Tic Tac Toe", gameIcon: "/icons/game/tic-tac-toe.svg"},
+    {gameTitle: "Coin flip", gameIcon: "/icons/game/coin-flip.svg"}
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (<div className={"wrapper"}>
+            <Index/>
+            <div className={"main"}>
+                {games.map((obj) => <GameCard gameTitle ={obj.gameTitle} gameIcon={obj.gameIcon}/>)}
+            </div>
+            <Footer/>
+        </div>
+    );
 }
 
 export default App;

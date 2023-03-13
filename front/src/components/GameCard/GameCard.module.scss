@@ -1,0 +1,56 @@
+.gameCard {
+  padding-right: 1em;
+  padding-left: 1em;
+  width: 500px;
+  height: 500px;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Secular One', sans-serif;
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .gameCardTitle {
+    font-size: 25px;
+  }
+
+  .gameCardInfo {
+    display: flex;
+    align-items: end;
+    justify-content: right;
+    svg {
+      cursor: pointer;
+      transition: fill .3s ease-in-out;
+
+      &:hover {
+        fill: gray;
+      }
+    }
+  }
+
+  button {
+    border: 1px dashed;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    color: black;
+    font-family: 'Secular One', sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    transition: background-color .3s, color .3s,border-color .3s;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: gray;
+    border-color: white;
+    border-style: solid;
+    color: white;
+
+  }
+}

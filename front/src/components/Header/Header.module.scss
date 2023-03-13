@@ -1,0 +1,65 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header {
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  .logoBlock {
+    display: flex;
+
+    p {
+      font-size: 3em;
+      cursor: default;
+
+      span {
+        display: inline-block;
+        animation: spin 1s forwards;
+        color: gray;
+      }
+    }
+
+    svg {
+      cursor: pointer;
+      transition: fill .3s ease-in-out;
+
+      &:hover {
+        fill: gray;
+      }
+    }
+  }
+
+  .usrIcon {
+    svg {
+      cursor: pointer;
+      transition: fill .3s ease-in-out;
+
+      &:hover {
+        fill: gray;
+      }
+    }
+  }
+
+  .buttonSection {
+    display: flex;
+
+    h1 {
+      transition: color .3s ease-in-out;
+      padding-right: 3em;
+    }
+
+    *:hover {
+      color: gray;
+      cursor: pointer;
+    }
+  }
+}
