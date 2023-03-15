@@ -1,0 +1,93 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12em;
+}
+
+.loginForm {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  align-items: center;
+
+  .data {
+    width: 100%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    label {
+      font-size: 30px;
+    }
+
+    input {
+      width: 100%;
+      font-family: 'Secular One', sans-serif;
+      margin-bottom: 15px;
+      border: 2px gray dashed;
+      border-radius: 30px;
+      padding-top: 15px;
+    }
+
+    button {
+      border: 2px gray dashed;
+      background-color: white;
+      margin-bottom: 10px;
+      border-radius: 30px;
+      color: black;
+      font-family: 'Secular One', sans-serif;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      transition: background-color .3s, color .3s, border-color .3s;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: gray;
+      border-color: white;
+      border-style: solid;
+      color: white;
+
+    }
+  }
+  a{
+    color: gray;
+  }
+  a:visited{
+    color: gray;
+  }
+}
+
+
+.logoBlock {
+  display: flex;
+  justify-content: center;
+
+  p {
+    font-size: 3em;
+    cursor: default;
+
+    span {
+      display: inline-block;
+      animation: spin 1s forwards;
+      color: gray;
+    }
+  }
+
+  svg {
+    cursor: pointer;
+    transition: fill .3s ease-in-out;
+
+    &:hover {
+      fill: gray;
+    }
+  }
+}
+

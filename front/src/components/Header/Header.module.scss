@@ -6,7 +6,13 @@
     transform: rotate(360deg);
   }
 }
-
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited{
+  color: black;
+}
 .header {
   margin-bottom: 2em;
   display: flex;

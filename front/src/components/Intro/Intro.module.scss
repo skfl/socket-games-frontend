@@ -1,0 +1,40 @@
+.intro {
+  display: flex;
+  .textBlock{
+    cursor: default;
+    h1{
+      font-size: 3em;
+      span{
+        color: gray;
+      }
+    }
+    .text{
+      padding-bottom: 20px;
+    }
+    button {
+      border: 1px dashed;
+      background-color: white;
+      margin-bottom: 10px;
+      border-radius: 30px;
+      color: black;
+      font-family: 'Secular One', sans-serif;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 30px;
+      transition: background-color .3s, color .3s,border-color .3s;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: gray;
+      border-color: white;
+      border-style: solid;
+      color: white;
+
+    }
+    font-size: 25px;
+    width: 500px;
+  }
+}

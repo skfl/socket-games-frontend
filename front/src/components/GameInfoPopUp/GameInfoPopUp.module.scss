@@ -1,0 +1,53 @@
+.gameInfoPopUp {
+  visibility: visible;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  .messageBox {
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: start;
+    background: white;
+    width: 400px;
+    height: auto;
+    border: 5px black solid;
+    border-radius: 35px;
+
+    .title {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        background: white;
+        border: none;
+        text-decoration: none;
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+
+      svg {
+        cursor: pointer;
+        transition: fill .3s ease-in-out;
+
+        &:hover {
+          fill: gray;
+        }
+      }
+    }
+
+  }
+}
