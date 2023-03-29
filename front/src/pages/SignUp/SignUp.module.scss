@@ -5,7 +5,7 @@
   padding-top: 12em;
 }
 
-.loginForm {
+.signUpForm {
   display: flex;
   width: 400px;
   flex-direction: column;
@@ -26,6 +26,7 @@
 
     input {
       width: 100%;
+      font-size: 20px;
       font-family: 'Secular One', sans-serif;
       margin-bottom: 15px;
       border: 2px gray dashed;
@@ -89,5 +90,9 @@
       fill: gray;
     }
   }
+}
+
+.validateErrMessage{
+  color: red;
 }
 

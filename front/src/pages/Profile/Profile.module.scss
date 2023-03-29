@@ -1,0 +1,30 @@
+.profilePageWrap{
+  .mainTitle{
+    font-size: 6em;
+  }
+  .info{
+    font-size: 0.75em;
+  }
+  button {
+    border: 2px gray dashed;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    color: black;
+    font-family: 'Secular One', sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    transition: background-color .3s, color .3s, border-color .3s;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: gray;
+    border-color: white;
+    border-style: solid;
+    color: white;
+
+  }
+}

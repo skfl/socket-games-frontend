@@ -1,13 +1,15 @@
 import styles from "./GameCard.module.scss"
 import GameInfoPopUp from "../GameInfoPopUp";
 import React from "react";
+
 let isPopUp = false;
 
-function GameCard(props) {
+function GameCard({info, imgUrl, title}) {
     const [isPopUp, setIsPopUs] = React.useState(false);
     return (
         <div className={styles.gameCard}>
-            {isPopUp ? <GameInfoPopUp onCrossClick={()=>setIsPopUs(!isPopUp)} title={props.gameTitle} description={props.gameDescription}/> : null}
+            {isPopUp ?
+                <GameInfoPopUp onCrossClick={() => setIsPopUs(!isPopUp)} title={title} description={info}/> : null}
             <div className={styles.gameCardInfo} title="About this game">
                 <svg onClick={() => setIsPopUs(!isPopUp)} viewBox="0 0 24 24" fill="black" width="30px" height="30px">
                     <g id="SVGRepo_bgCarrier"></g>
@@ -23,8 +25,8 @@ function GameCard(props) {
                     </g>
                 </svg>
             </div>
-            <img src={props.gameIcon} alt=" " width={400} height={400}></img>
-            <div className={styles.gameCardTitle}>{props.gameTitle}</div>
+            <img src={imgUrl} alt=" " width={400} height={400}></img>
+            <div className={styles.gameCardTitle}>{title}</div>
             <button>Play</button>
         </div>
     );
