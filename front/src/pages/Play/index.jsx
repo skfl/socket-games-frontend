@@ -2,7 +2,8 @@ import GameCard from "../../components/GameCard";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import s from "./Play.module.scss"
-import {useUser, useGameInfo} from "../../lib/customHooks";
+import {useGameInfo, useUser} from "../../lib/customHooks";
+import {useState} from "react";
 
 const games = [
     {
@@ -21,25 +22,36 @@ function Play() {
 
     const user = useUser();
     const gameInfo = useGameInfo();
-    console.log(gameInfo)
+    const [searchValue, setSearchValue] = useState('');
+
+    const onInputChange = (event) => {
+        setSearchValue(event.target.value)
+    }
+
     return (
         <div>
             <Header/>
             {!gameInfo.isLoaded && <p>loading...</p>}
             {gameInfo.isLoaded && (
-                <div>
-                <div className={s.title}>Play</div>
-                <div className={s.gameSection}>
-                    {gameInfo.gameInfo.map((obj, index) =>
-                        (<GameCard
-                            key={index}
-                            title={obj.title}
-                            imgUrl={obj.imgUrl}
-                            info={obj.description}
-                            playUrl={obj.playUrl}
-                        />))}
-                </div>
-            </div>)}
+                <div className={s.wrapper}>
+                    <div className={s.titleSearch}>
+                        <div className={s.title}>{searchValue ? `Searching for : "${searchValue}"` : 'Play'}</div>
+                        <div className={s.search}>
+                            <img alt={" "} src={'/icons/search.svg'}></img>
+                            <input placeholder={"Search..."} onChange={onInputChange} value={searchValue}></input>
+                        </div>
+                    </div>
+                    <div className={s.gameSection}>
+                        {gameInfo.gameInfo.filter(obj => obj.title.toLowerCase().includes(searchValue.toLowerCase())).map((obj, index) =>
+                            (<GameCard
+                                key={index}
+                                title={obj.title}
+                                imgUrl={obj.imgUrl}
+                                info={obj.description}
+                                playUrl={obj.playUrl}
+                            />))}
+                    </div>
+                </div>)}
             <Footer/>
         </div>
 
