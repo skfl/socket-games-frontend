@@ -24,8 +24,7 @@ export async function getAuthenticatedUser() {
             method: 'GET',
             url: API_ROUTES.GET_USER,
             headers: {
-                Authorization: token,
-                'Access-Control-Allow-Origin': 'http://localhost:8080'
+                Authorization: "Bearer " + token
             }
         });
         defaultReturnObject.user = response.data.user;
@@ -35,5 +34,25 @@ export async function getAuthenticatedUser() {
     } catch (err) {
         console.log('getAuthenticatedUser, Something Went Wrong', err);
         return defaultReturnObject;
+    }
+}
+
+export async function getGamesInfo() {
+    const returnObject = {gameInfo: null}
+    try {
+        const response = await axios({
+            method: "GET",
+            url: API_ROUTES.GET_GAME_INFO,
+            headers: {
+                Authorization: "Bearer " + getTokenFromLocalStorage()
+            }
+        })
+        returnObject.gameInfo = response.data.gameInfo
+        console.log("returnObject")
+        console.log(returnObject)
+        return returnObject
+    } catch (err) {
+        console.log(err)
+        return returnObject
     }
 }

@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {getAuthenticatedUser} from './common';
+import {getAuthenticatedUser, getGamesInfo} from './common';
 import {useNavigate} from 'react-router-dom';
 import {APP_ROUTES} from "../utils/constants";
 
@@ -11,8 +11,6 @@ export function useUser() {
 
     useEffect(() => {
         async function getUserDetails() {
-
-            console.log("useUser effect")
             const {authenticated, user} = await getAuthenticatedUser();
             if (!authenticated) {
                 navigate(APP_ROUTES.SIGN_IN);
@@ -27,4 +25,27 @@ export function useUser() {
     }, []);
 
     return {user, authenticated, isLoaded};
+}
+
+export function useGameInfo() {
+
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [gameInfo, setGameInfo] = useState(null);
+
+    useEffect(() => {
+        async function getGames(){
+            const {gameInfo} = await getGamesInfo();
+            console.log("useGame data")
+            console.log(gameInfo)
+            setGameInfo(gameInfo)
+            setIsLoaded(true)
+        }
+
+        getGames();
+    }, [])
+    return {gameInfo, isLoaded}
+}
+
+export function useTicTacToe(){
+
 }

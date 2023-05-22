@@ -5,7 +5,6 @@ import {removeTokenFromLocalStorage} from "../../lib/common";
 import {useNavigate} from 'react-router-dom';
 import {APP_ROUTES} from "../../utils/constants";
 import s from "./Profile.module.scss"
-import {useEffect} from "react";
 
 function Profile() {
     const user = useUser();
@@ -19,7 +18,8 @@ function Profile() {
         <div>
             <Header/>
             {!user.isLoaded && <p>loading...</p>}
-            {user.isLoaded && (<div className={s.profilePageWrap}>
+            {user.isLoaded && (
+                <div className={s.profilePageWrap}>
                 <div className={s.mainTitle}>
                     Profile
                     <div className={s.info}>

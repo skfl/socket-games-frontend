@@ -2,6 +2,7 @@ import GameCard from "../../components/GameCard";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import s from "./Play.module.scss"
+import {useUser, useGameInfo} from "../../lib/customHooks";
 
 const games = [
     {
@@ -18,22 +19,38 @@ const games = [
 
 function Play() {
 
+    const user = useUser();
+    const gameInfo = useGameInfo();
+    console.log(gameInfo)
     return (
         <div>
             <Header/>
-            <div className={s.title}>Play</div>
-            <div className={s.gameSection}>
-                {games.map((obj, index) => (
-                    <GameCard
-                        key={index}
-                        title={obj.gameTitle}
-                        imgUrl={obj.gameIcon}
-                        info={obj.gameDescription}/>))}
-            </div>
+            {!gameInfo.isLoaded && <p>loading...</p>}
+            {gameInfo.isLoaded && (
+                <div>
+                <div className={s.title}>Play</div>
+                <div className={s.gameSection}>
+                    {gameInfo.gameInfo.map((obj, index) =>
+                        (<GameCard
+                            key={index}
+                            title={obj.title}
+                            imgUrl={obj.imgUrl}
+                            info={obj.description}
+                            playUrl={obj.playUrl}
+                        />))}
+                </div>
+            </div>)}
             <Footer/>
         </div>
 
     );
 }
+
+// {gameInfo.data.map((obj, index) => (
+//     <GameCard
+//         key={index}
+//         title={obj.gameTitle}
+//         imgUrl={obj.gameIcon}
+//         info={obj.gameDescription}/>))}
 
 export default Play;

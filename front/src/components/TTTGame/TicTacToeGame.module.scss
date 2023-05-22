@@ -1,0 +1,65 @@
+.tic-tac-toe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Secular One', sans-serif;
+  margin-top: 50px;
+
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 300px;
+
+    .cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 48px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      height: 100px;
+      border: 2px dotted black;
+      border-radius: 50%;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+
+  .winner {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .draw {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+
+  .reset-button {
+    margin-top: 20px;
+    border: 1px dashed;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    color: black;
+    font-family: 'Secular One', sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    transition: background-color .3s, color .3s, border-color .3s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: gray;
+      border-color: white;
+      border-style: solid;
+      color: white;
+    }
+  }
+}

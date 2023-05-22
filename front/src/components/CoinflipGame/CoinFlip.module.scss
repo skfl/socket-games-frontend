@@ -1,0 +1,182 @@
+// CoinFlip.module.scss
+
+.coin-flip {
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .coin {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #e6e6e6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &.flipping {
+      animation: flipCoin 1s ease-in-out;
+    }
+
+    svg {
+      width: 150px;
+      height: 150px;
+
+      .coin-circle {
+        fill: #e6e6e6;
+        transition: fill 0.3s ease-in-out;
+      }
+
+      .coin-text {
+        font-size: 24px;
+        text-anchor: middle;
+        dominant-baseline: central;
+        fill: #000;
+        transition: fill 0.3s ease-in-out;
+      }
+
+      &.heads {
+        .coin-circle {
+          fill: #f2b632;
+        }
+
+        .coin-text {
+          fill: #fff;
+        }
+      }
+
+      &.tails {
+        .coin-circle {
+          fill: #395ea6;
+        }
+
+        .coin-text {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  .flip-btn {
+    margin-top: 20px;
+    border: 1px dashed;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    color: black;
+    font-family: 'Secular One', sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    transition: background-color .3s, color .3s, border-color .3s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: gray;
+      border-color: white;
+      border-style: solid;
+      color: white;
+    }
+  }
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      text-align: center;
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      .popup-close {
+        margin-top: 20px;
+        border: 1px dashed;
+        background-color: white;
+        margin-bottom: 10px;
+        border-radius: 30px;
+        color: black;
+        font-family: 'Secular One', sans-serif;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        transition: background-color .3s, color .3s, border-color .3s;
+
+        &:hover {
+          cursor: pointer;
+          background-color: gray;
+          border-color: white;
+          border-style: solid;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .selection-button {
+    margin-top: 20px;
+    border: 1px dashed;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    margin-right: 10px;
+    color: black;
+    font-family: 'Secular One', sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    transition: background-color .3s, color .3s, border-color .3s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: gray;
+      border-color: white;
+      border-style: solid;
+      color: white;
+    }
+    &:active{
+      background-color: gray;
+    }
+  }
+}
+
+@keyframes flipCoin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}

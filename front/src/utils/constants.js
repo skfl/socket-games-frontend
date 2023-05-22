@@ -3,15 +3,20 @@ export const API_ROUTES = {
     SIGN_UP: `/signUp`,
     SIGN_IN: `/signIn/do`,
     GET_USER: `/user/get`,
+    GET_GAME_INFO:'/info/games'
 }
 
 export const APP_ROUTES = {
     SIGN_UP: '/signUp',
     SIGN_IN: '/signIn',
+
     PLAY: '/play',
     ABOUT: '/about',
     HOME: '/',
     PROFILE: '/profile',
+
+    GAME_TTT:'/play/tictactoe',
+    GAME_COINFLIP:'/play/coinflip'
 }
 
 export const VALIDATE_PATTERNS = {

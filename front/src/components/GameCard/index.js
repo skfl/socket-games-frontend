@@ -1,11 +1,14 @@
 import styles from "./GameCard.module.scss"
 import GameInfoPopUp from "../GameInfoPopUp";
 import React from "react";
+import {useNavigate} from "react-router-dom";
 
 let isPopUp = false;
 
-function GameCard({info, imgUrl, title}) {
+function GameCard({info, imgUrl, title, playUrl}) {
     const [isPopUp, setIsPopUs] = React.useState(false);
+    const navigate = useNavigate();
+
     return (
         <div className={styles.gameCard}>
             {isPopUp ?
@@ -27,7 +30,7 @@ function GameCard({info, imgUrl, title}) {
             </div>
             <img src={imgUrl} alt=" " width={400} height={400}></img>
             <div className={styles.gameCardTitle}>{title}</div>
-            <button>Play</button>
+            <button onClick={() => navigate(playUrl)}>Play</button>
         </div>
     );
 }

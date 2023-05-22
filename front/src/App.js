@@ -10,6 +10,8 @@ import SignUp from "./pages/SignUp";
 import Play from "./pages/Play";
 import {APP_ROUTES} from "./utils/constants";
 import Profile from "./pages/Profile";
+import TicTacToe from "./pages/TicTacToe";
+import CoinFlip from "./pages/CoinFlip";
 
 function App() {
 
@@ -23,9 +25,9 @@ function App() {
                     <Route path={APP_ROUTES.ABOUT} element={<About/>}></Route>
                     <Route path={APP_ROUTES.PLAY} element={<Play/>}></Route>
                     <Route path={APP_ROUTES.PROFILE} element={<Profile/>}></Route>
+                    <Route path={APP_ROUTES.GAME_TTT} element={<TicTacToe/>}></Route>
+                    <Route path={APP_ROUTES.GAME_COINFLIP} element={<CoinFlip/>}></Route>
                 </Routes>
-
-
             </div>
         </div>
 
